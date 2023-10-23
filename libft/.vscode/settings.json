@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"type_traits": "c",
+		"concepts": "c",
+		"cstdio": "c",
+		"new": "c",
+		"typeinfo": "c"
+	}
+}
