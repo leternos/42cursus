@@ -17,26 +17,34 @@
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	size_t i;
+	size_t j;
 	char *str;
 
 	str = (char *)malloc(strlen(s1) + strlen(s2) + 1);
 	i = 0;
+	j = 0;
 
-	while (s1[i] && s2[i])
+	while (s1[i])
 	{
-		str[i] = s1[i] + s1[strlen(s1) + i];
+		str[i] = s1[i];
 		i++;
 	}
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
 	str[i] = '\0';
-	
+
 	return (str);
 }
 
-int	main(void)
+int main(void)
 {
 	const char *s1 = "Primeira";
 	const char *s2 = "Segunda";
-	
+
 	char *result = ft_strjoin(s1, s2);
 
 	printf("As duas: %s\n", result);
