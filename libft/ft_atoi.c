@@ -6,31 +6,34 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:45:20 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/20 18:16:23 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:45:56 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	res;
-	int	sign;
+	int	sig;
 
+	sig = 1;
 	res = 0;
-	sign = 1;
-	if (*nptr == '-')
+	while (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\r'
+		|| *str == '\f' || *str == '\v')
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
-		nptr++;
+		if (*str == '-')
+		{
+			sig = -sig;
+		}
+		str++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
+	while (*str >= 48 && *str <= 57)
 	{
-		res *= 10;
-		res += *nptr - '0';
-		nptr++;
+		res = (res * 10) + (*str - 48);
+		str++;
 	}
-	return (res * sign);	
+	return (res * sig);
 }
 
 // int	main(void)

@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	count;
+	size_t	c;
 
-	count = 0;
-	while (str[count] != '\0')
-		count++;
-	return (count);
+	if (!str)
+		return (0);
+	c = 0;
+	while (str[c] != '\0')
+		c++;
+	return (c);
 }

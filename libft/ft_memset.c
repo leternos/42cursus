@@ -5,30 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 14:49:22 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/18 19:30:07 by gcouto-f         ###   ########.fr       */
+/*   Created: 2023/10/26 19:43:45 by gcouto-f          #+#    #+#             */
+/*   Updated: 2023/10/26 20:30:56 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-void *ft_memset(void *ptr, int value, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*s;
-
-	s = (unsigned char *)ptr;
-	while(n > 0)
-	{
-		s[n - 1] = value;
-		n--;
-	}
-	return (ptr);
+	typedef unsigned char *byte;
+	while (len-- > 0)
+		*((byte)b + len) = c;
+	return (b);
 }
 
-int	main(void)
+/*
+int main(void)
 {
-	char buffer[10] = "Hello";
-	printf("%s\n", ft_memset(buffer, 'A', 2));
-	return (0);
+	char v[10];
+
+	ft_memset(v, 42, 5);
+
+	for (int i = 0; i < 10; ++i)
+		printf("%d\n", v[i]);
+	printf("ft_memset-> %p\n\n", ft_memset(v, 42, 5));
+
+	memset(v, 21, 5);
+
+	for (int i = 0; i < 10; ++i)
+		printf("%d\n", v[i]);
+	printf("Real memset-> %p\n", memset(v, 21, 5));
 }
+*/

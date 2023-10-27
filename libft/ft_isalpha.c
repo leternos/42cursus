@@ -6,11 +6,11 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:21:01 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/20 16:24:42 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/10/26 19:01:23 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1024);

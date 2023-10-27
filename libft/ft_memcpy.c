@@ -1,42 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 16:23:40 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/16 19:18:12 by gcouto-f         ###   ########.fr       */
+/*   Created: 2023/10/26 20:32:52 by gcouto-f          #+#    #+#             */
+/*   Updated: 2023/10/26 20:33:04 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char *d = dest;
-	const char *s = src;
 	int	i;
 
 	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);	
+	if (NULL == src && NULL == dst)
+		return (NULL);
+	while (n--)
+		*((unsigned char *)dst + i++) = *(unsigned char *)src++;
+	return (dst);
 }
 
-int	main(void){
-	char src[] = "Hello World";
-	char dest [20];
-	
-	ft_memcpy(dest, src, sizeof(src));
+/*
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	printf("%s\n", src);
-	printf("%s\n", dest);
-
-	return (0);
-	
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	ptr = (unsigned char *)dest;
+	ptr2 = (unsigned char *)src;
+	while (n-- > 0)
+		*(ptr++) = *(ptr2++);
+	return ((void *)dest);
 }
+*/
+/*
+int	main(void)
+{
+	char	v[] = "hello";
+	char	v1[] = "World";
+
+	printf("%s ->%p\n", v,  ft_memcpy(v, v1, 3));
+
+	printf("%s ->%p\n", v,  memcpy(v, v1, 3));
+}
+*/

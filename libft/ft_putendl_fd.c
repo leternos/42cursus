@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 14:15:45 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/26 19:07:25 by gcouto-f         ###   ########.fr       */
+/*   Created: 2023/10/27 11:47:16 by gcouto-f          #+#    #+#             */
+/*   Updated: 2023/10/27 11:47:37 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (s)
+	{
+		while (*s)
+			write(fd, s++, 1);
+		write(fd, "\n", 1);
+	}
 }
+
+/*
+int	main()
+{
+	ft_putendl_fd("hello", 0);
+	ft_putendl_fd("hello", 1);
+	ft_putendl_fd("hello", 2);
+	//3 not in terminal
+	ft_putendl_fd("hello", 3);
+}
+*/

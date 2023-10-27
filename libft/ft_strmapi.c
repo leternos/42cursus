@@ -1,44 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 20:43:16 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/26 20:43:24 by gcouto-f         ###   ########.fr       */
+/*   Created: 2023/10/26 21:12:20 by gcouto-f          #+#    #+#             */
+/*   Updated: 2023/10/26 21:12:33 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	char	*ptr;
+	int		i;
 
 	i = 0;
-	while (i < n)
+	if (NULL == s)
+		return (NULL);
+	ptr = malloc(ft_strlen(s) + 1);
+	if (NULL == ptr)
+		return (NULL);
+	if (NULL == f)
 	{
-		if (*((unsigned char *)s + i) == (unsigned char)c)
-			return ((void *)((unsigned char *)s + i));
+		ft_strlcpy(ptr, s, ft_strlen(s) + 1);
+		return (ptr);
+	}
+	while (s[i])
+	{
+		ptr[i] = f(i, s[i]);
 		++i;
 	}
-	return (NULL);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 /*
-
-//gcc ft_memchr.c && ./a.out s c n 
+ *
 int	main(int argc, char **argv)
 {
-	char	c;
-	char	*s;
-	int		n;
+	char 	*s;
+	char	(*f)(unsigned int, char);	
 
-	s = argv[1];
-	c = argv[2][0];
-	n = atoi(argv[3]);
-	printf("%p\n\n", ft_memchr(s, c, n));
-	printf("%p\n\n", memchr(s, c, n));
+	f = my_func;
+	s = "hello";	
+	printf("%s\n", ft_strmapi(s, f));
 }
 */

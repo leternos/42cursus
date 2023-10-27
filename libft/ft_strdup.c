@@ -30,9 +30,12 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
+/*
 int main(void)
 {
 	const char *str = "hello";
 	printf("%s\n", ft_strdup(str));
 	return (0);
 }
+
+*/

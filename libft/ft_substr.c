@@ -6,35 +6,32 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:47:47 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/23 15:16:47 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:56:16 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	char *str;
-	
-	str = (char *)malloc(len + 1);
-	i = 0;
-	
-	if (str == NULL)
-		return NULL;
-		
-	while (s[start + i] != '\0' && i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[i] = '\0';
+	char	*str;
+	size_t	str_len;
 
-	return(str);
+	if (!s)
+		return (0);
+	str_len = ft_strlen((char *)s);
+	if (start > str_len)
+		return (ft_strdup(""));
+	if (len > str_len - start)
+		len = str_len - start;
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, (s + start), (len + 1));
+	return (str);
 }
 
+/*
 int	main(void)
 {
 	const char *s = "Hello this is a string";
@@ -45,7 +42,7 @@ int	main(void)
 	{
 		printf("Substring: %s\n", result);
 		free(result);
-	} 
+	}
 	else
 	{
 		printf("Memory allocation failed. \n");
@@ -53,3 +50,4 @@ int	main(void)
 
 	return (0);
 }
+*/
