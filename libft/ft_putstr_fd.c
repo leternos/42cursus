@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:46:41 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 11:46:49 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:25:55 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,3 @@ void	ft_putstr_fd(char *s, int fd)
 			write(fd, s++, 1);
 	}
 }
-
-/*
-int	main()
-{
-	ft_putstr_fd("h", 1);
-}
-*/

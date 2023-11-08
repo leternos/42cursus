@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:45:20 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/26 20:45:56 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:23:31 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sig);
 }
-
-// int	main(void)
-// {
-// 	const char *str = "-572384";
-// 	printf("%d\n", ft_atoi(str));
-// 	return (0);
-// }

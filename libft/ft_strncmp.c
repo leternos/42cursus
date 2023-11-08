@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:46:15 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/26 20:42:22 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:06:39 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	return (str1[i] - str2[i]);
 }
-
-/*
-int main(void)
-{
-	char s[20] = "Leternos";
-	char s2[20] = "Leternos";
-	int res = ft_strncmp(s, s2, 3);
-	printf("%d\n", res);
-	return (0);
-}
-*/

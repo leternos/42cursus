@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:47:16 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 11:47:37 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:26:52 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,3 @@ void	ft_putendl_fd(char *s, int fd)
 		write(fd, "\n", 1);
 	}
 }
-
-/*
-int	main()
-{
-	ft_putendl_fd("hello", 0);
-	ft_putendl_fd("hello", 1);
-	ft_putendl_fd("hello", 2);
-	//3 not in terminal
-	ft_putendl_fd("hello", 3);
-}
-*/

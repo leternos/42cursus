@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:12:20 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/26 21:12:33 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:21:07 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-/*
- *
-int	main(int argc, char **argv)
-{
-	char 	*s;
-	char	(*f)(unsigned int, char);	
-
-	f = my_func;
-	s = "hello";	
-	printf("%s\n", ft_strmapi(s, f));
-}
-*/

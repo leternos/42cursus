@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:53:28 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 12:56:18 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:28:37 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ char	*ft_strdup(const char *s)
 	*p = '\0';
 	return (str);
 }
-
-/*
-int main(void)
-{
-	const char *str = "hello";
-	printf("%s\n", ft_strdup(str));
-	return (0);
-}
-
-*/

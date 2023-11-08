@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:14:24 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 11:48:30 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:27:24 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd((n % 10) + 48, fd);
 	}
 }
-
-/*
-int	main()
-{
-	ft_putnbr_fd(404, 1);	
-	write(1, "\n", 1);
-	ft_putnbr_fd(-2147483648, 1);	
-	write(1, "\n", 1);
-	ft_putnbr_fd(2147483647, 1);	
-	write(1, "\n", 1);
-	ft_putnbr_fd(0, 1);	
-}
-*/

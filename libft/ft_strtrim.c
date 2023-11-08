@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 20:58:21 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 12:20:06 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:01:04 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, &s1[start], end - start + 2);
 	return (str);
 }
-
-/*
-int main(void)
-{
-    const char *s = "    This string will be trimmed     ";
-    const char *set = " ";
-    char *trimmed = ft_strtrim(s, set);
-
-    if (trimmed == NULL)
-    {
-        fprintf(stderr, "Memory allocation failed. \n");
-        return 1;
-    }
-
-    printf("Original: \"%s\"\n", s);
-    printf("Trimmed: \"%s\"\n", trimmed);
-    free(trimmed);
-    return 0;
-}
-
-*/

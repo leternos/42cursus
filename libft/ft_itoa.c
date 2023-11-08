@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:05:36 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 12:23:37 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 23:20:06 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*
-int main()
-{
-  char *str = ft_itoa(-2134);
-  printf("%s\n", str);
-
-  str = ft_itoa(42);
-  printf("%s\n", str);
-  str = ft_itoa(707);
-  printf("%s\n", str);
-
-  str = ft_itoa(INT32_MIN);
-  printf("%s\n", str);
-
-  str = ft_itoa(INT32_MAX);
-  printf("%s\n", str);
-
-  str = ft_itoa(0);
-  printf("%s\n", str);
-
-  return 0;
-}
-*/

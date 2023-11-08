@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:22:20 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 12:58:31 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/07 22:40:52 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-
-/*
-int main(void)
-{
-	const char *s1 = "Primeira";
-	const char *s2 = "Segunda";
-
-	char *result = ft_strjoin(s1, s2);
-
-	printf("As duas: %s\n", result);
-
-	return (0);
-}
-
-*/

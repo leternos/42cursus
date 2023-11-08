@@ -6,7 +6,7 @@
 /*   By: gcouto-f <gcouto-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:04:17 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/10/27 13:22:39 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:59:06 by gcouto-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,65 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_free_split(char **lst, int i)
 {
-	char	**lst;
-	size_t	word_len;
-	int		i;
+	while (i > 0)
+		free(lst[--i]);
+	free(lst);
+	return (NULL);
+}
 
-	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-	if (!s || !lst)
-		return (0);
-	i = 0;
+static char	**ft_add_substr(char **lst, char const *s, size_t word_len, int i)
+{
+	char	*substr;
+
+	substr = ft_substr(s, 0, word_len);
+	if (!substr)
+		return (ft_free_split(lst, i));
+	lst[i] = substr;
+	return (lst);
+}
+
+static char	**ft_process_split(char **lst, char const *s, char c, size_t *p_i)
+{
+	size_t		word_len;
+	char const	*next;
+
 	while (*s)
 	{
-		while (*s == c && *s)
+		while (*s == c)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
-				word_len = ft_strlen(s);
+			next = ft_strchr(s, c);
+			if (next != NULL)
+				word_len = (size_t)(next - s);
 			else
-				word_len = ft_strchr(s, c) - s;
-			lst[i++] = ft_substr(s, 0, word_len);
+				word_len = ft_strlen(s);
+			lst = ft_add_substr(lst, s, word_len, *p_i);
+			if (!lst)
+				return (NULL);
 			s += word_len;
+			(*p_i)++;
 		}
 	}
+	return (lst);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**lst;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!lst)
+		return (NULL);
+	i = 0;
+	lst = ft_process_split(lst, s, c, &i);
+	if (!lst)
+		return (NULL);
 	lst[i] = NULL;
 	return (lst);
 }
